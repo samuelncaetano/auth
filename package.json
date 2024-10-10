@@ -2,9 +2,24 @@
   "name": "auth",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/main/routes/server.ts",
+  "type": "module",
+  "lint-staged": {
+    "*.ts": [
+      "npm run lint:fix",
+      "npm run test:run"
+    ]
+  },
   "scripts": {
-    "commit": "cz"
+    "commit": "cz",
+    "prepare": "husky",
+    "start": "tsx src/main/routes/server.ts",
+    "start:dev": "tsx watch src/main/routes/server.ts",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "test": "vitest --passWithNoTests",
+    "test:run": "vitest --passWithNoTests --run",
+    "coverage": "vitest run --coverage"
   },
   "keywords": [],
   "author": "",
