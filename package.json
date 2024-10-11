@@ -39,6 +39,7 @@
     "@types/bcrypt": "^5.0.2",
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
+    "@types/jsonwebtoken": "^9.0.7",
     "@types/node": "^22.7.5",
     "@vitest/coverage-v8": "^2.1.2",
     "commitizen": "4.3.1",
