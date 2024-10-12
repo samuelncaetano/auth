@@ -4,6 +4,13 @@ export interface IUser {
   password: string;
 }
 
+export interface IUserWithId {
+  id: string;
+  name: string;
+  email: string;
+  password: string;
+}
+
 export class User {
   constructor(
     public readonly name: string,
