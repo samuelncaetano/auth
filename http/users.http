@@ -1,3 +1,5 @@
+@TOKEN = 
+
 POST http://localhost:3000/user
 Content-Type: application/json
 
@@ -6,3 +8,17 @@ Content-Type: application/json
     "email": "john.doe@example.com",
     "password": "default"
 }
+
+###
+POST http://localhost:3000/user/login
+Content-Type: application/json
+
+{
+    "email": "john.doe@example.com",
+    "password": "default"
+}
+
+###
+GET http://localhost:3000/user/protected
+Authorization: Bearer {{TOKEN}}
+Content-Type: application/json
