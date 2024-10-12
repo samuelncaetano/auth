@@ -1,4 +1,4 @@
-import { IUser } from "@/domain/entities/User";
+import { IUser, IUserWithId } from "@/domain/entities/User";
 
 export interface CreateUserParams {
   name: string;
@@ -13,5 +13,5 @@ export interface LoginUserParams {
 
 export interface IAuthUserRepository {
   createUser(params: CreateUserParams): Promise<IUser>;
-  findUserByEmail(email: string): Promise<IUser | null>;
+  findUserByEmail(email: string): Promise<IUserWithId | null>;
 }
