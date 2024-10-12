@@ -2,8 +2,8 @@ import {
   CreateUserParams,
   IAuthUserRepository,
 } from "@/application/interfaces/domain/entities/user/IauthUser";
+import { IUser, IUserWithId } from "@/domain/entities/User";
 
-import { IUser } from "@/domain/entities/User";
 import { prisma } from "@/main/config/database/prisma";
 
 export class PrismaAuthUser implements IAuthUserRepository {
@@ -18,7 +18,7 @@ export class PrismaAuthUser implements IAuthUserRepository {
     return newUser;
   }
 
-  async findUserByEmail(email: string): Promise<IUser | null> {
+  async findUserByEmail(email: string): Promise<IUserWithId | null> {
     const user = await prisma.user.findUnique({
       where: { email: email },
     });
