@@ -32,8 +32,8 @@ export class CreateUserController implements IController {
 
       const newUser = await this.createUserUseCase.execute(httpRequest.body!);
 
-      if (!newUser) {
-        return badRequest("User with this email already exists");
+      if (typeof newUser === "string") {
+        return badRequest(newUser);
       }
 
       const responseBody: CreateUserResponse = {

@@ -12,13 +12,13 @@ export class CreateUserUseCase implements ICreateUserUseCase {
     private readonly userFactory: IuserFactory,
     private readonly authUserRepositor: IAuthUserRepository,
   ) {}
-  async execute(params: CreateUserParams): Promise<CreateUserReturn | null> {
+  async execute(params: CreateUserParams): Promise<CreateUserReturn | string> {
     const existingUser = await this.authUserRepositor.findUserByEmail(
       params.email,
     );
 
     if (existingUser) {
-      return null;
+      return "User with this email already exists";
     }
 
     const newUser = await this.userFactory.createUser(params);

@@ -54,6 +54,6 @@ describe("CreateUserUseCase", () => {
     const result = await createUserUseCase.execute(userParams);
 
     // Assert
-    expect(result).toBeNull();
+    expect(result).toBe("User with this email already exists");
   });
 });

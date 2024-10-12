@@ -8,7 +8,7 @@ import {
 } from "../protocol/user/authUserProtocols";
 
 export interface ICreateUserUseCase {
-  execute(params: CreateUserParams): Promise<CreateUserReturn | null>;
+  execute(params: CreateUserParams): Promise<CreateUserReturn | string>;
 }
 
 export interface ILoginUserUseCase {
