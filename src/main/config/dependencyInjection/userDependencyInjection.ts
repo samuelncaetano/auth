@@ -7,10 +7,11 @@ import { LoginUserUseCase } from "@/application/useCases/loginUserUseCase";
 import { PrismaAuthUser } from "@/infrastructure/database/prisma/prismaAuthUser";
 import { UserFactory } from "@/domain/factories/userFactory";
 
+// Auth
 const bcryptPassword = new BcryptPassword();
+const jWTTokenGenerator = new JWTTokenGenerator();
 const userFactory = new UserFactory(bcryptPassword);
 const prismaAuthUser = new PrismaAuthUser();
-const jWTTokenGenerator = new JWTTokenGenerator();
 
 // Create
 const createUserUseCase = new CreateUserUseCase(userFactory, prismaAuthUser);
